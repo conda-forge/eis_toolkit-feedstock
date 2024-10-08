@@ -22,22 +22,16 @@ requirements:
     - python >=3.9,<3.11
     - pip
   run:
-    - python =3.9.15  # [win]
-    - python >=3.9.15,<3.11  # [not win]
-    - libgdal =3.0.2  # [win]
-    - gdal >=3.0.2  # [not win]
-    - rasterio =1.2.10  # [win]
-    - rasterio >=1.2.10  # [not win]
+    - python >=3.9.15,<3.11
+    - gdal >=3.0.2
+    - rasterio >=1.2.10
     - pandas =2.2.2
-    - geopandas =0.12.2  # [win]
-    - geopandas >=0.12.2,<1.0.0  # [not win]
+    - geopandas >=0.12.2,<1.0.0
     - scikit-learn =1.4.2
     - matplotlib-base =3.8.4
     - statsmodels =0.14.2
-    - keras =2.10.0  # [win]
-    - keras >=2.10.0,<3.0.0  # [not win]
-    - tensorflow =2.10.0  # [win]
-    - tensorflow >=2.10.0  # [not win]
+    - keras >=2.10.0,<3.0.0
+    - tensorflow >=2.10.0
     - beartype =0.18.5
     - seaborn =0.13.2
     - pykrige =1.7.1
@@ -46,7 +40,6 @@ requirements:
     - mapclassify =2.6.1
     - esda =2.5.1
     - scipy =1.13.0
-    - icu =58.2  # [win]
 
 test:
   imports:
