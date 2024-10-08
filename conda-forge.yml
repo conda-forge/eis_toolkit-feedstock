@@ -4,9 +4,3 @@ github:
 conda_build:
   error_overlinking: true
 conda_forge_output_validation: true
-# Build on Windows
-noarch_platforms:
-  - linux_64
-  - win_64
-# Set channel priority to flexible
-channel_priority: flexible
