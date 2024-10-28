@@ -1,5 +1,5 @@
 {% set name = "eis_toolkit" %}
-{% set version = "1.0.2" %}
+{% set version = "1.0.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/GispoCoding/eis_toolkit/archive/v{{ version }}.tar.gz
-  sha256: a7aba0cf512a388f171f5fca50bb0bf717e1fdce1637cd95c5817f2bf2437d69
+  sha256: 1f7fef39599169c71424dc9da9cea0d5d2fe9356a133b2e61b1601c0d0604eb8
 
 build:
   entry_points:
