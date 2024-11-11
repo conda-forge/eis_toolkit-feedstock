@@ -39,7 +39,7 @@ requirements:
     - imbalanced-learn =0.12.2
     - mapclassify =2.6.1
     - esda =2.5.1
-    - scipy =1.13.0
+    - scipy =1.11.4
 
 test:
   imports:
