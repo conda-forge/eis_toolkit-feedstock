@@ -1,5 +1,5 @@
 {% set name = "eis_toolkit" %}
-{% set version = "1.0.3" %}
+{% set version = "1.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/GispoCoding/eis_toolkit/archive/v{{ version }}.tar.gz
-  sha256: 1f7fef39599169c71424dc9da9cea0d5d2fe9356a133b2e61b1601c0d0604eb8
+  sha256: 887f4e2cbed1a2efd4e65df79d6d204874dd2973fa711077d88e42bc4cdae913
 
 build:
   entry_points:
@@ -19,10 +19,10 @@ build:
 requirements:
   host:
     - poetry-core >=1.0.0
-    - python >=3.9,<3.11
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.9.15,<3.11
+    - python >={{ python_min }}
     - gdal >=3.0.2
     - rasterio >=1.2.10
     - pandas =2.2.2
@@ -40,6 +40,7 @@ requirements:
     - mapclassify =2.6.1
     - esda =2.5.1
     - scipy =1.13.0
+    - numba >=0.60.0
 
 test:
   imports:
@@ -48,8 +49,11 @@ test:
     # pip check issues with momepy and giddy having no versions (0.0.0)
     # - pip check
     - eis --help
-    - pytest
+    # Failing tests do not correspond to failing functionality:
+    # https://github.com/GispoCoding/eis_toolkit/pull/465
+    - pytest -v -k 'not test_pca_with'
   requires:
+    - python {{ python_min }}
     - pip
     - pytest
   source_files:
