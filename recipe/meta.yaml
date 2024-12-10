@@ -49,9 +49,7 @@ test:
     # pip check issues with momepy and giddy having no versions (0.0.0)
     # - pip check
     - eis --help
-    # Failing tests do not correspond to failing functionality:
-    # https://github.com/GispoCoding/eis_toolkit/pull/465
-    - pytest -v -k 'not test_pca_with'
+    - pytest -v
   requires:
     - python {{ python_min }}
     - pip
