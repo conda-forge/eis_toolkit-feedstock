@@ -1,5 +1,5 @@
 {% set name = "eis_toolkit" %}
-{% set version = "1.1.1" %}
+{% set version = "1.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/GispoCoding/eis_toolkit/archive/v{{ version }}.tar.gz
-  sha256: 887f4e2cbed1a2efd4e65df79d6d204874dd2973fa711077d88e42bc4cdae913
+  sha256: 7d546c74f927b0ed75249e711ade02efe2bfdf75942dd6216898347f973b0917
 
 build:
   entry_points:
@@ -49,9 +49,7 @@ test:
     # pip check issues with momepy and giddy having no versions (0.0.0)
     # - pip check
     - eis --help
-    # Failing tests do not correspond to failing functionality:
-    # https://github.com/GispoCoding/eis_toolkit/pull/465
-    - pytest -v -k 'not test_pca_with'
+    - pytest -v
   requires:
     - python {{ python_min }}
     - pip
